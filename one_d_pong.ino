@@ -17,22 +17,20 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-// Karl Martin, 2019: Changed code to fit in 5kb of memory on the attiny85
+// Karl Martin, 2019: Changed code to also fit in 5kb of memory on the attiny85
 
 #include "Adafruit_NeoPixel.h"
 
-//#define NELEM(x)		(sizeof(x) / sizeof((x)[0]))
-
-#define PIN_WSDATA		0		// LED data
-#define PIN_BUT_RS	 	1	// Right start/hit button
-#define PIN_BUT_LS		2		// Left start/hit button
+#define PIN_WSDATA		2		// LED data
+#define PIN_BUT_RS	 	3	        // Right start/hit button
+#define PIN_BUT_LS		4		// Left start/hit button
 
 #define NPIXELS			30		// Number of pixels to handle
 
-#define ZONE_SIZE		1		// Bounce-back zone size
-#define SHOW_LO			12		// Score dots intensity background
-#define SHOW_HI			48		// Score dots intensity foreground
-#define WIN_POINTS		2		// Points needed to win
+#define ZONE_SIZE		4		// Bounce-back zone size
+#define SHOW_LO			128		// Score dots intensity background
+#define SHOW_HI			196		// Score dots intensity foreground
+#define WIN_POINTS		5		// Points needed to win
 
 Adafruit_NeoPixel one_d = Adafruit_NeoPixel(NPIXELS, PIN_WSDATA, NEO_GRB | NEO_KHZ800);
 
